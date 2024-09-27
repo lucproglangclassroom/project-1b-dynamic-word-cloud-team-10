@@ -1,11 +1,10 @@
 package hellotest
 
 import java.util.Scanner
-import mainargs._
 import org.apache.commons.collections4.queue.CircularFifoQueue
 import scala.collection.mutable
 
-object Main {
+object Main:
   // Default values for the parameters
   val CLOUD_SIZE = 10
   val LENGTH_AT_LEAST = 6
@@ -33,7 +32,6 @@ object Main {
       }
     }
   }
-}
 
 class StreamFrequencySorter(var cloudSize: Int, var lengthAtLeast: Int, var windowSize: Int) {
   // A mutable Map to store word frequencies
