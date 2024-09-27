@@ -3,6 +3,8 @@ package hellotest
 import java.util.Scanner
 import org.apache.commons.collections4.queue.CircularFifoQueue
 import scala.collection.mutable
+import scala.language.unsafeNulls
+import scala.sys.exit
 
 object Main:
   // Default values for the parameters
@@ -18,8 +20,13 @@ object Main:
          ): Unit = {
     println(s"Starting with cloudSize = $cloudSize, lengthAtLeast = $lengthAtLeast, windowSize = $windowSize")
 
-    val wordProcessor = new StreamFrequencySorter(cloudSize, lengthAtLeast, windowSize)
+    // Handle SIGPIPE gracefully
+    sys.addShutdownHook {
+      println("Terminating gracefully due to SIGPIPE")
+      exit(0)
+    }
 
+    val wordProcessor = new StreamFrequencySorter(cloudSize, lengthAtLeast, windowSize)
     val scanner = new Scanner(System.in)
 
     // Continuously read input words and process
@@ -57,10 +64,12 @@ class StreamFrequencySorter(var cloudSize: Int, var lengthAtLeast: Int, var wind
       }
     }
 
-    // Sort the map by frequency (descending order)
-    val sortedByFrequency = wordFrequency.toSeq.sortBy(-_._2).take(cloudSize)
+    // Sort the map by frequency (descending order) and alphabetically in case of ties
+    val sortedByFrequency = wordFrequency.toSeq.sortBy { case (word, count) => (-count, word) }.take(cloudSize)
 
-    // Print the sorted words by frequency
-    println(s"Words sorted by frequency: ${sortedByFrequency.mkString(", ")}")
+    // Print the sorted words by frequency in the required format
+    if (sortedByFrequency.nonEmpty) {
+      println(sortedByFrequency.map { case (word, count) => s"$word: $count" }.mkString(" "))
+    }
   }
 }
