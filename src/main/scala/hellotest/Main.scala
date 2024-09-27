@@ -27,8 +27,8 @@ object Main:
       val word = scanner.next()
 
       // Process the word if it meets the minimum length requirement
-      if (word.length >= lengthAtLeast) {
-        wordProcessor.processWord(word)
+      if (word.nn.length >= lengthAtLeast) { // Use .nn here
+        wordProcessor.processWord(word.nn) // And here
       }
     }
   }
@@ -50,7 +50,7 @@ class StreamFrequencySorter(var cloudSize: Int, var lengthAtLeast: Int, var wind
 
     // If the window size exceeds, remove the oldest word from the queue and update its frequency
     if (wordQueue.size > windowSize) {
-      val oldestWord = wordQueue.remove()
+      val oldestWord = wordQueue.remove().nn // Use .nn here
       wordFrequency(oldestWord) = wordFrequency(oldestWord) - 1
       if (wordFrequency(oldestWord) == 0) {
         wordFrequency.remove(oldestWord)
