@@ -13,11 +13,11 @@ object Main:
   val WINDOW_SIZE = 1000
 
   @main
-  def run(
-           cloudSize: Int = CLOUD_SIZE,
-           lengthAtLeast: Int = LENGTH_AT_LEAST,
-           windowSize: Int = WINDOW_SIZE
-         ): Unit = {
+  def run(args: String*): Unit = {
+    // Parse arguments if provided, otherwise use defaults
+    val cloudSize = if (args.length > 0) args(0).toIntOption.getOrElse(CLOUD_SIZE) else CLOUD_SIZE
+    val lengthAtLeast = if (args.length > 1) args(1).toIntOption.getOrElse(LENGTH_AT_LEAST) else LENGTH_AT_LEAST
+    val windowSize = if (args.length > 2) args(2).toIntOption.getOrElse(WINDOW_SIZE) else WINDOW_SIZE
     println(s"Starting with cloudSize = $cloudSize, lengthAtLeast = $lengthAtLeast, windowSize = $windowSize")
 
     // Handle SIGPIPE gracefully
