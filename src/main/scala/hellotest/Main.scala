@@ -11,12 +11,16 @@ object Main:
   val LENGTH_AT_LEAST = 6
   val WINDOW_SIZE = 1000
 
+  private val logger = org.log4s.getLogger // initialize logger
+
   @main
-  ef run(args: String*): Unit = {
+  def run(args: String*): Unit = {
     val cloudSize = if (args.length > 0) args(0).toIntOption.getOrElse(CLOUD_SIZE) else CLOUD_SIZE
     val lengthAtLeast = if (args.length > 1) args(1).toIntOption.getOrElse(LENGTH_AT_LEAST) else LENGTH_AT_LEAST
     val windowSize = if (args.length > 2) args(2).toIntOption.getOrElse(WINDOW_SIZE) else WINDOW_SIZE
     println(s"Starting with cloudSize = $cloudSize, lengthAtLeast = $lengthAtLeast, windowSize = $windowSize")
+
+    logger.debug(f"cloudSize = $cloudSize lengthAtLeast = $lengthAtLeast windowSize = $windowSize")
 
     //work on sigpipe 
     sys.addShutdownHook {
