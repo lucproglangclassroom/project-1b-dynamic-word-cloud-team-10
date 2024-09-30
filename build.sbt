@@ -6,12 +6,6 @@ scalaVersion := "3.3.3"
 
 scalacOptions += "@.scalacOptions.txt"
 
-// Optional: configure scoverage settings
-//coverageEnabled := true
-//coverageMinimum := 80 // sets the minimum coverage threshold to 80%
-///coverageFailOnMinimum := true // fails the build if the threshold isn't met
-
-
 libraryDependencies += "org.log4s" %% "log4s" % "1.10.0"
 libraryDependencies += "org.slf4j" % "slf4j-simple" % "1.7.30"
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.3" % Runtime
