@@ -29,12 +29,6 @@ object Main {
     // Log the received arguments
     logger.debug(s"cloudSize: $cloudSize, kSteps: $kSteps, minFrequency: $minFrequency, minLength: $minLength, windowSize: $windowSize")
 
-    // Setup SIGPIPE handling
-    sys.addShutdownHook {
-      println("Terminating gracefully due to SIGPIPE")
-      exit(0)
-    }
-
     // Initialize the word processor with a frequency sorter
     val wordProcessor = new StreamFrequencySorter(cloudSize, minLength, windowSize, minFrequency)
     logger.info("Initialized StreamFrequencySorter")
@@ -52,6 +46,7 @@ object Main {
         wordProcessor.processWord(lowercasedWord)
         logger.debug(s"Processed word: $lowercasedWord")
 
+        //println(s"min length req met, adding word: $word")
         // Increment print counter and check if we should print the top words
         PRINT_COUNTER += 1
         if (PRINT_COUNTER % kSteps == 0) {
@@ -59,7 +54,6 @@ object Main {
         }
       }
     }
-
     // Print final word cloud after all input has been processed (EOF)
     printWordCloud(wordProcessor, cloudSize, System.out)
   }
@@ -77,7 +71,6 @@ object Main {
         exit(1)
       }
     }
-
     Console.flush() // Ensure the output is flushed to the console
   }
 }
@@ -95,6 +88,11 @@ class StreamFrequencySorter(
   private val wordQueue = new CircularFifoQueue[String](windowSize)
 
   def processWord(word: String): Unit = {
+    // ignore word if it doesn't meet the expected minlength
+    if (word.length < minLength) {
+    println(s"Ignoring word due to min length (length ${word.length}): $word")
+    return 
+    }
     wordQueue.add(word)
     wordFrequency(word) = wordFrequency.getOrElse(word, 0) + 1
     logger.debug(s"Added word to queue: $word")
