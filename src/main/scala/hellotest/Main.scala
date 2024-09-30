@@ -52,23 +52,27 @@ object Main {
         // Increment print counter and check if we should print the top words
         PRINT_COUNTER += 1
         if (PRINT_COUNTER % kSteps == 0) {
-          printWordCloud(wordProcessor, cloudSize)
+          printWordCloud(wordProcessor, cloudSize, System.out)
         }
       }
     }
 
     // Print final word cloud after all input has been processed (EOF)
-    printWordCloud(wordProcessor, cloudSize)
+    printWordCloud(wordProcessor, cloudSize, System.out)
   }
 
   // Helper method to print the top words in the word cloud
   // Adjusted printWordCloud method to remove unnecessary colons and ensure correct formatting
-  def printWordCloud(wordProcessor: StreamFrequencySorter, cloudSize: Int): Unit = {
+  def printWordCloud(wordProcessor: StreamFrequencySorter, cloudSize: Int, output: java.io.PrintStream): Unit = {
     val topWords = wordProcessor.getTopWords(cloudSize)
 
     // Print the top words in the desired format: "word: frequency"
     if (topWords.nonEmpty) {
-      println(topWords.map { case (word, count) => s"$word: $count" }.mkString(" "))
+      output.println(topWords.map { case (word, count) => s"$word: $count" }.mkString(" "))
+      if (output.checkError()) {
+        println("Error detected. Exiting (SIGPIPE)")
+        exit(1)
+      }
     }
 
     Console.flush() // Ensure the output is flushed to the console
@@ -80,7 +84,8 @@ class StreamFrequencySorter(
                              var cloudSize: Int,
                              var minLength: Int,
                              var windowSize: Int,
-                             var minFrequency: Int
+                             var minFrequency: Int,
+                             val output: java.io.PrintStream = System.out
                            ) {
   private val wordFrequency: mutable.Map[String, Int] = mutable.Map()
   private val wordQueue = new CircularFifoQueue[String](windowSize)
