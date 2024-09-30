@@ -37,10 +37,12 @@ object Main {
 
     // Initialize the word processor with a frequency sorter
     val wordProcessor = new StreamFrequencySorter(cloudSize, minLength, windowSize, minFrequency)
+    logger.info("Initialized StreamFrequencySorter")
 
     // Read words from standard input (can be from a continuous stream)
     val lines = Source.stdin.getLines
     val words = lines.flatMap(line => Option(line).map(_.split("(?U)[^\\p{Alpha}0-9']+")).getOrElse(Array.empty[String]))
+    logger.info("Started reading words from standard input")
 
     // Process each word
     words.filter(_ != null).foreach { word =>
@@ -48,6 +50,7 @@ object Main {
         // Convert word to lowercase for case-insensitive comparison
         val lowercasedWord = word.toLowerCase
         wordProcessor.processWord(lowercasedWord)
+        logger.debug(s"Processed word: $lowercasedWord")
 
         // Increment print counter and check if we should print the top words
         PRINT_COUNTER += 1
@@ -62,15 +65,15 @@ object Main {
   }
 
   // Helper method to print the top words in the word cloud
-  // Adjusted printWordCloud method to remove unnecessary colons and ensure correct formatting
   def printWordCloud(wordProcessor: StreamFrequencySorter, cloudSize: Int, output: java.io.PrintStream): Unit = {
     val topWords = wordProcessor.getTopWords(cloudSize)
 
     // Print the top words in the desired format: "word: frequency"
     if (topWords.nonEmpty) {
       output.println(topWords.map { case (word, count) => s"$word: $count" }.mkString(" "))
+      logger.info("Printed word cloud")
       if (output.checkError()) {
-        println("Error detected. Exiting (SIGPIPE)")
+        logger.error("Error detected while printing. Exiting (SIGPIPE)")
         exit(1)
       }
     }
@@ -87,30 +90,37 @@ class StreamFrequencySorter(
                              var minFrequency: Int,
                              val output: java.io.PrintStream = System.out
                            ) {
+  private val logger = org.log4s.getLogger
   private val wordFrequency: mutable.Map[String, Int] = mutable.Map()
   private val wordQueue = new CircularFifoQueue[String](windowSize)
 
   def processWord(word: String): Unit = {
     wordQueue.add(word)
     wordFrequency(word) = wordFrequency.getOrElse(word, 0) + 1
+    logger.debug(s"Added word to queue: $word")
 
     // Automatically remove oldest word when queue exceeds capacity
     if (wordQueue.size == windowSize) {
       Option(wordQueue.peek()).foreach { oldestWord =>
         wordFrequency(oldestWord) = wordFrequency(oldestWord) - 1
+        logger.debug(s"Removed oldest word from queue: $oldestWord")
         if (wordFrequency(oldestWord) == 0) {
           wordFrequency.remove(oldestWord)
+          logger.debug(s"Removed word from frequency map: $oldestWord")
         }
       }
     }
   }
 
   def getTopWords(topN: Int): Seq[(String, Int)] = {
-    wordFrequency
+    val topWords = wordFrequency
       .filter(_._2 >= minFrequency) // Filter by minimum frequency
       .toSeq
       .sortBy { case (_, count) => -count } // Sort by frequency in descending order
       .take(topN) // Take the top N most frequent words
+
+    logger.debug(s"Top words: ${topWords.mkString(", ")}")
+    topWords
   }
 }
 
