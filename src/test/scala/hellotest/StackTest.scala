@@ -20,11 +20,11 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
 
     val testCases = Table(
       ("input", "expectedFrequency"),
-      ("hello", 1),
-      ("hi", 1),
-      ("hello", 2),
-      ("hi", 2),
-      ("hey", 1)
+      ("helloooo", 1),
+      ("hiiiiii", 1),
+      ("helloooo", 2),
+      ("hiiiiii", 2),
+      ("heyyyyyyy", 1)
     )
 
     forAll(testCases) { (input: String, expectedFrequency: Int) =>
