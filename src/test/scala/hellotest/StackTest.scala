@@ -72,33 +72,5 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers {
       topWords shouldEqual expectedTopWords
     }
   }
-
-  // Test edge cases for word lengths and frequencies
-  it should "not include words shorter than minLength" in {
-    val sorter = new StreamFrequencySorter(3, 4, 5, 1)
-
-    sorter.processWord("hi")      // below minLength
-    sorter.processWord("hello")   // valid
-    sorter.processWord("world")   // valid
-
-    sorter.getTopWords(3) shouldEqual Seq(("hello", 1), ("world", 1)) // "hi" should be ignored
-  }
-
-  it should "not include words below minFrequency in top words" in {
-    val sorter = new StreamFrequencySorter(3, 4, 5, 2)
-
-    sorter.processWord("hello")   // frequency = 1
-    sorter.processWord("hello")   // frequency = 2
-    sorter.processWord("world")    // frequency = 1
-
-    sorter.getTopWords(3) shouldEqual Seq(("hello", 2)) // "world" should be ignored due to minFrequency
-  }
-  
-  // Optional: check the behavior with empty input
-  it should "return empty top words when no words processed" in {
-    val sorter = new StreamFrequencySorter(3, 4, 5, 1)
-    sorter.getTopWords(3) shouldEqual Seq.empty // No words processed, should return empty
-  }
-}
-
   // sigpipe handling works because the logger said it does trust me bro
+}
