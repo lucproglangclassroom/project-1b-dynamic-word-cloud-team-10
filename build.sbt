@@ -17,7 +17,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
   "ch.qos.logback" % "logback-classic" % "1.4.7",
   "com.github.scopt" %% "scopt" % "4.1.0",
-   "org.log4s" %% "log4s" % "1.10.0",
+  "org.log4s" %% "log4s" % "1.10.0",
   "org.scalacheck" %% "scalacheck" % "1.18.0" % Test
 )
 

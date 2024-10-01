@@ -4,11 +4,11 @@ import org.apache.commons.collections4.queue.CircularFifoQueue
 import scala.collection.mutable
 import scala.language.unsafeNulls
 import scala.sys.exit
-import org.log4s._
+import org.log4s.getLogger
 import scala.io.Source
 
 object Main {
-  private[this] val logger = org.log4s.getLogger
+  private[this] val logger = getLogger
   var PRINT_COUNTER: Int = 0
 
   def main(args: Array[String]): Unit = {
@@ -121,5 +121,3 @@ class StreamFrequencySorter(
     topWords
   }
 }
-
-// Add closing brace for Main object
