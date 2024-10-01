@@ -12,6 +12,7 @@ object Main {
   var PRINT_COUNTER: Int = 0
 
   def main(args: Array[String]): Unit = {
+    logger.info("program start (logging begins here)")
     // Default values for the arguments
     var cloudSize = 10
     var kSteps = 6
