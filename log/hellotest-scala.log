@@ -29,3 +29,564 @@
 2024-09-30 19:46:47 DEBUG hellotest.Main - Processed word: hey
 2024-09-30 19:46:47 DEBUG hellotest.StreamFrequencySorter - Top words: (pop,2), (hi,2), (boo,1), (yoooo,1), (lol,1), (yoo,1), (hoo,1), (soda,1), (hey,1), (oda,1)
 2024-09-30 19:46:47 INFO  hellotest.Main - Printed word cloud
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:24:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2), (heyyyyyyy,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (java,1), (scala,1)
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:27:13 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:27:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2), (heyyyyyyy,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (java,1), (scala,1)
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:29:42 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:30:32 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2), (heyyyyyyy,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (java,1), (scala,1)
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:31:14 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2), (heyyyyyyy,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (java,1), (scala,1)
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:33:16 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:33:52 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: banana
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: apple
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: cherry
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: cherry
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: date
+2024-09-30 23:43:28 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: date
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: banana
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: apple
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: cherry
+2024-09-30 23:43:47 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: cherry
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: banana
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:44:05 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cherry
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: date
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: banana
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Added word to queue: fruit
+2024-09-30 23:44:23 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: apple
