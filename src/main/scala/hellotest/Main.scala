@@ -94,8 +94,8 @@ class StreamFrequencySorter(
   def processWord(word: String): Unit = {
     // ignore word if it doesn't meet the expected minlength
     if (word.length < minLength) {
-    logger.debug(s"Ignoring word due to min length (length ${word.length}): $word")
-    return 
+      logger.debug(s"Ignoring word due to min length (length ${word.length}): $word")
+      return 
     }
     wordQueue.add(word)
     wordFrequency(word) = wordFrequency.getOrElse(word, 0) + 1

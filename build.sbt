@@ -12,7 +12,8 @@ libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.4.7" % Runtime
 
 libraryDependencies ++= Seq(
   "org.log4s" %% "log4s" % "1.10.0",
-  "org.scalatest"  %% "scalatest"  % "3.2.19"  % Test,
+  "ch.qos.logback" % "logback-classic" % "1.4.7" % Runtime,
+  "org.scalatest" %% "scalatest" % "3.2.19" % Test,
   "com.lihaoyi" %% "mainargs" % "0.6.3",
   "org.apache.commons" % "commons-collections4" % "4.4",
   "com.github.scopt" %% "scopt" % "4.1.0",
@@ -20,5 +21,3 @@ libraryDependencies ++= Seq(
 )
 
 enablePlugins(JavaAppPackaging)
-
-
