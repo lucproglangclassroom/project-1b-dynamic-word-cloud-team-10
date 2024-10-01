@@ -1,0 +1,31 @@
+2024-09-30 19:45:47 DEBUG hellotest.Main - cloudSize: 10, kSteps: 6, minFrequency: 1, minLength: 1, windowSize: 1000
+2024-09-30 19:45:48 INFO  hellotest.Main - Initialized StreamFrequencySorter
+2024-09-30 19:45:48 INFO  hellotest.Main - Started reading words from standard input
+2024-09-30 19:45:55 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hi
+2024-09-30 19:45:55 DEBUG hellotest.Main - Processed word: hi
+2024-09-30 19:45:55 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hi
+2024-09-30 19:45:55 DEBUG hellotest.Main - Processed word: hi
+2024-09-30 19:45:55 DEBUG hellotest.StreamFrequencySorter - Added word to queue: yoooo
+2024-09-30 19:45:55 DEBUG hellotest.Main - Processed word: yoooo
+2024-09-30 19:45:58 DEBUG hellotest.StreamFrequencySorter - Added word to queue: pop
+2024-09-30 19:45:58 DEBUG hellotest.Main - Processed word: pop
+2024-09-30 19:46:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: oda
+2024-09-30 19:46:01 DEBUG hellotest.Main - Processed word: oda
+2024-09-30 19:46:35 DEBUG hellotest.StreamFrequencySorter - Added word to queue: pop
+2024-09-30 19:46:35 DEBUG hellotest.Main - Processed word: pop
+2024-09-30 19:46:35 DEBUG hellotest.StreamFrequencySorter - Top words: (pop,2), (hi,2), (yoooo,1), (oda,1)
+2024-09-30 19:46:35 INFO  hellotest.Main - Printed word cloud
+2024-09-30 19:46:39 DEBUG hellotest.StreamFrequencySorter - Added word to queue: soda
+2024-09-30 19:46:39 DEBUG hellotest.Main - Processed word: soda
+2024-09-30 19:46:41 DEBUG hellotest.StreamFrequencySorter - Added word to queue: lol
+2024-09-30 19:46:41 DEBUG hellotest.Main - Processed word: lol
+2024-09-30 19:46:43 DEBUG hellotest.StreamFrequencySorter - Added word to queue: boo
+2024-09-30 19:46:43 DEBUG hellotest.Main - Processed word: boo
+2024-09-30 19:46:44 DEBUG hellotest.StreamFrequencySorter - Added word to queue: yoo
+2024-09-30 19:46:44 DEBUG hellotest.Main - Processed word: yoo
+2024-09-30 19:46:45 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hoo
+2024-09-30 19:46:45 DEBUG hellotest.Main - Processed word: hoo
+2024-09-30 19:46:47 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hey
+2024-09-30 19:46:47 DEBUG hellotest.Main - Processed word: hey
+2024-09-30 19:46:47 DEBUG hellotest.StreamFrequencySorter - Top words: (pop,2), (hi,2), (boo,1), (yoooo,1), (lol,1), (yoo,1), (hoo,1), (soda,1), (hey,1), (oda,1)
+2024-09-30 19:46:47 INFO  hellotest.Main - Printed word cloud
