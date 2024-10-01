@@ -2,11 +2,10 @@ package hellotest
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.BeforeAndAfter
 import org.scalatest.prop.TableDrivenPropertyChecks._
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
-import scala.sys.ShutdownHookThread
+import scala.util.control.NonFatal
 
 // TODO: check that functionality works as intended: 
 //     - test for the processWord and getTopWords functions individually 
@@ -86,5 +85,24 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
   }
 // TODO: check for error handling
 //     - test if sigpipe handling works as intended 
+  it should "handle SIGPIPE correctly in printWordCloud" in {
+    val outputStream = new ByteArrayOutputStream()
+    val printStream = new PrintStream(outputStream)
+    val sorter = new StreamFrequencySorter(3, 4, 5, 1)
+    var exitCalled = false
 
+    sorter.processWord("test")
+    sorter.processWord("word")
+
+    printStream.close()
+
+    try {
+      Main.printWordCloud(sorter, 10, printStream)
+    } 
+    catch {
+      case NonFatal(e) =>
+        exitCalled = true
+    }
+    exitCalled shouldBe true
+  }
 }
