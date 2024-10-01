@@ -154,3 +154,18 @@ class LoggingTest extends AnyFlatSpec with Matchers {
   }
 }
   */
+
+// TODO: this needs to be fixed the test is failing but i think it could be fixed to work
+class WindowSizeHandlingSpec extends AnyFlatSpec with Matchers {
+
+  "StreamFrequencySorter" should "remove the oldest words when the window size is exceeded" in {
+    val sorter = new StreamFrequencySorter(3, 4, 10, 1)
+    sorter.processWord("one")
+    sorter.processWord("two")
+    sorter.processWord("three")
+    sorter.processWord("four")
+
+    val topWords = sorter.getTopWords(3)
+    topWords shouldEqual Seq(("two", 1), ("three", 1), ("four", 1))
+  }
+}
