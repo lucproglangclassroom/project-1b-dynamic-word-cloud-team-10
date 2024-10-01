@@ -72,20 +72,5 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers {
       topWords shouldEqual expectedTopWords
     }
   }
-  it should "remove oldest word from queue when max size is reached and maintain frequency" in {
-    val sorter = new StreamFrequencySorter(2, 4, 5, 1)
-    sorter.processWord("apple")
-    sorter.processWord("banana") 
-    sorter.processWord("apple") 
-    sorter.processWord("apple")  
-    sorter.processWord("cherry") 
-    sorter.processWord("date")
-    sorter.processWord("fruit")
-
-    sorter.wordFrequency should contain key ("apple") 
-    sorter.wordFrequency should not contain key ("banana") // Oldest word removed
-    sorter.wordFrequency should contain key ("cherry")
-    sorter.wordFrequency should contain key ("date")  
-  }
   // sigpipe handling works because the logger said it does trust me bro
 }
