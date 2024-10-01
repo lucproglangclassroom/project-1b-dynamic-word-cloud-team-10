@@ -21,12 +21,15 @@ object Main {
     var windowSize = 1000
 
     // Parse command-line arguments (if provided)
-    if (args.length > 0) cloudSize = args(0).toInt
-    if (args.length > 1) kSteps = args(1).toInt
-    if (args.length > 2) minFrequency = args(2).toInt
-    if (args.length > 3) minLength = args(3).toInt
-    if (args.length > 4) windowSize = args(4).toInt
-
+    args.sliding(2, 2).toList.collect {
+      case Array("--cloud-size", value: String) => cloudSize = value.toInt
+      case Array("-c", value: String) => cloudSize = value.toInt
+      case Array("--length-at-least", value: String) => minLength = value.toInt
+      case Array("-l", value: String) => minLength = value.toInt
+      case Array("--window-size", value: String) => windowSize = value.toInt
+      case Array("-w", value: String) => windowSize = value.toInt
+    }
+    
     // Log the received arguments
     logger.debug(s"cloudSize: $cloudSize, kSteps: $kSteps, minFrequency: $minFrequency, minLength: $minLength, windowSize: $windowSize")
 

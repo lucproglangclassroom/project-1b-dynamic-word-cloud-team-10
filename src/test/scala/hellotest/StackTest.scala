@@ -8,6 +8,20 @@ import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 import scala.sys.ShutdownHookThread
 
+//TODO: check that the default parameters are assigned if there aren't any provided
+// class MainSpec extends AnyFlatSpec with Matchers{
+//   "Main" should "use default values if no arguments are provided" in {
+//     //simulates console input
+//     val args = Array()
+//     Main.main(args)
+
+//     Main.cloudSize shouldBe 10
+//     Main.kSteps shouldBe 6
+//     Main.minFrequency shouldBe 1
+//     Main.minLength shouldBe 1
+//     Main.windowSize shouldBe 1000
+//   }
+// }
 // TODO: check that functionality works as intended: 
 //     - test for the processWord and getTopWords functions individually 
 // DONE
