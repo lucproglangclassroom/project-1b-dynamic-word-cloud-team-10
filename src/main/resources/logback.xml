@@ -1,11 +1,10 @@
 <configuration>
-
-  <!-- Disable console output -->
+  <!-- Disable console output
   <appender name="NO_CONSOLE" class="ch.qos.logback.core.AppenderBase">
       <encoder>
           <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
       </encoder>
-  </appender>
+  </appender> -->
 
   <!-- Log to a file named "hellotest-scala.log" -->
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
