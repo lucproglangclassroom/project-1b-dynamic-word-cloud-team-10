@@ -7,11 +7,9 @@ import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 import scala.util.control.NonFatal
 
-// TODO: check that functionality works as intended: 
-//     - test for the processWord and getTopWords functions individually 
-// DONE
-class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
-  //testing out processWords function
+class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers {
+  
+  // Test the processWord function
   "StreamFrequencySorter" should "process output in order of frequency" in {
     val outputStream = new ByteArrayOutputStream()
     val printStream = new PrintStream(outputStream)
@@ -32,9 +30,9 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
       frequency shouldEqual expectedFrequency
     }
   }
-  //testing out getTopWords function
+
+  // Test the getTopWords function
   it should "return the top words correctly" in {
-    // initializing a new set of sorters to process words into for topword testing
     val outputStream = new ByteArrayOutputStream()
     val printStream = new PrintStream(outputStream)
     val sorter = new StreamFrequencySorter(3, 4, 10, 1)
@@ -51,22 +49,15 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
 
     topWords shouldEqual expectedTopWords
   }
-// TODO: check for errors with the parameters in StreamFrequencySorter: 
-//     - test for min / max parameters in minLength, minFrequency, and windowSize
-//     - test for the wordlength minimum critera has been implemented 
-//     - OPTIONAL: test to see how program responds with non-numerical inputs
+
+  // Test different parameters handling
   it should "handle different parameters correctly" in {
     val testCases = Table(
-      // first element displays the order of test table
-      // tl;dr: parameters | words: fed input | expectedTopWords: expected output
       ("cloudSize", "minLength", "windowSize", "minFrequency", "words", "expectedTopWords"),
       (3, 4, 5, 1, Seq("hello", "world", "hello", "scala"), Seq(("hello", 2), ("world", 1), ("scala", 1))),
-      // test minLength
-      (3, 6, 5, 1, Seq("hello", "wor", "banana"), Seq(("banana", 1))),
-      // test window size
-      (3, 4, 3, 1, Seq("scala", "java", "python", "kotlin"), Seq(("python", 1), ("kotlin", 1))),
-      // test minimum frequency
-      (3, 4, 5, 2, Seq("apple", "banana", "apple", "apple"), Seq(("apple", 3)))
+      (3, 6, 5, 1, Seq("hello", "wor", "banana"), Seq(("banana", 1))), // test minLength
+      (3, 4, 3, 1, Seq("scala", "java", "python", "kotlin"), Seq(("python", 1), ("kotlin", 1))), // test window size
+      (3, 4, 5, 2, Seq("apple", "banana", "apple", "apple"), Seq(("apple", 3))) // test minimum frequency
     )
 
     forAll(testCases) { (cloudSize, minLength, windowSize, minFrequency, words, expectedTopWords) =>
@@ -74,14 +65,60 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
       val printStream = new PrintStream(outputStream)
       val sorter = new StreamFrequencySorter(cloudSize, minLength, windowSize, minFrequency)
 
-      words.foreach { word =>
-      sorter.processWord(word)
-      } 
+      words.foreach(sorter.processWord)
 
       val topWords = sorter.getTopWords(cloudSize)
 
       topWords shouldEqual expectedTopWords
     }
   }
-  // sigpipe handling works because the logger said it does trust me bro
+
+  // Test edge cases for word lengths and frequencies
+  it should "not include words shorter than minLength" in {
+    val sorter = new StreamFrequencySorter(3, 4, 5, 1)
+
+    sorter.processWord("hi")      // below minLength
+    sorter.processWord("hello")   // valid
+    sorter.processWord("world")   // valid
+
+    sorter.getTopWords(3) shouldEqual Seq(("hello", 1), ("world", 1)) // "hi" should be ignored
+  }
+
+  it should "not include words below minFrequency in top words" in {
+    val sorter = new StreamFrequencySorter(3, 4, 5, 2)
+
+    sorter.processWord("hello")   // frequency = 1
+    sorter.processWord("hello")   // frequency = 2
+    sorter.processWord("world")    // frequency = 1
+
+    sorter.getTopWords(3) shouldEqual Seq(("hello", 2)) // "world" should be ignored due to minFrequency
+  }
+
+  // Test if sigpipe handling works (if implemented)
+  it should "handle SIGPIPE correctly in printWordCloud" in {
+    val outputStream = new ByteArrayOutputStream()
+    val printStream = new PrintStream(outputStream)
+    val sorter = new StreamFrequencySorter(3, 4, 5, 1)
+    var exitCalled = false
+
+    sorter.processWord("test")
+    sorter.processWord("word")
+
+    printStream.close() // close to simulate the SIGPIPE
+
+    try {
+      Main.printWordCloud(sorter, 10, printStream)
+    } catch {
+      case NonFatal(_) => exitCalled = true
+    }
+    exitCalled shouldBe true
+  }
+
+  // Optional: check the behavior with empty input
+  it should "return empty top words when no words processed" in {
+    val sorter = new StreamFrequencySorter(3, 4, 5, 1)
+    sorter.getTopWords(3) shouldEqual Seq.empty // No words processed, should return empty
+  }
 }
+
+  // sigpipe handling works because the logger said it does trust me bro
