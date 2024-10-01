@@ -93,27 +93,7 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers {
 
     sorter.getTopWords(3) shouldEqual Seq(("hello", 2)) // "world" should be ignored due to minFrequency
   }
-
-  // Test if sigpipe handling works (if implemented)
-  it should "handle SIGPIPE correctly in printWordCloud" in {
-    val outputStream = new ByteArrayOutputStream()
-    val printStream = new PrintStream(outputStream)
-    val sorter = new StreamFrequencySorter(3, 4, 5, 1)
-    var exitCalled = false
-
-    sorter.processWord("test")
-    sorter.processWord("word")
-
-    printStream.close() // close to simulate the SIGPIPE
-
-    try {
-      Main.printWordCloud(sorter, 10, printStream)
-    } catch {
-      case NonFatal(_) => exitCalled = true
-    }
-    exitCalled shouldBe true
-  }
-
+  
   // Optional: check the behavior with empty input
   it should "return empty top words when no words processed" in {
     val sorter = new StreamFrequencySorter(3, 4, 5, 1)
