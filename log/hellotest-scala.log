@@ -1,0 +1,45 @@
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,1), (helloooo,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: helloooo
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (helloooo,2), (hiiiiii,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hiiiiii
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,2)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: heyyyyyyy
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: helloooo
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (hiiiiii,2), (helloooo,1), (heyyyyyyy,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: orange
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,3), (apple,2), (orange,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: world
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (hello,2), (world,1), (scala,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 5): hello
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Ignoring word due to min length (length 3): wor
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (banana,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: scala
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: java
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: python
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: scala
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: scala
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: kotlin
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Removed oldest word from queue: java
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Removed word from frequency map: java
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (python,1), (kotlin,1)
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: banana
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Added word to queue: apple
+2024-10-01 23:21:49 DEBUG hellotest.StreamFrequencySorter - Top words: (apple,3)
+2024-10-01 23:21:49 INFO  hellotest.Main - program start (logging begins here)
+2024-10-01 23:21:49 DEBUG hellotest.Main - cloudSize: 5, kSteps: 6, minFrequency: 1, minLength: 3, windowSize: 1000
+2024-10-01 23:21:49 INFO  hellotest.Main - Initialized StreamFrequencySorter
+2024-10-01 23:21:49 INFO  hellotest.Main - Started reading words from standard input

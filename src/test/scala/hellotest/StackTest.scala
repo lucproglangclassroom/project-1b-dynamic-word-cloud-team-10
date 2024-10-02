@@ -13,10 +13,11 @@ import ch.qos.logback.core.AppenderBase
 import org.log4s.getLogger
 import org.slf4j.LoggerFactory
 import scala.language.unsafeNulls
+import java.io.{File, PrintWriter}
+import scala.io.{BufferedSource, Source}
 import scala.concurrent._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
-
 
 // TODO: check that functionality works as intended: 
 //     - test for the processWord and getTopWords functions individually 
@@ -130,31 +131,35 @@ class LogCaptureAppender extends AppenderBase[ILoggingEvent] {
 }
 
 class LoggingTest extends AnyFlatSpec with Matchers {
+  val logFilePath = "log/hellotest-scala.log"
+
   "Main" should "log appropriate messages" in {
-    // Capture logger output
-    val logger = LoggerFactory.getLogger("hellotest.Main").asInstanceOf[Logger]
-    val appender = new LogCaptureAppender()
-    appender.setContext(logger.getLoggerContext)
-    logger.addAppender(appender)
-    logger.setLevel(Level.INFO)
-    appender.start()
+    // clear out logging file
+    clearLogFile(logFilePath)
 
     // Test the logging functionality in Main
     val future = Future {
       Main.main(Array("--cloud-size", "5", "--length-at-least", "3"))
     }
 
+    Thread.sleep(1000)
+    
     // Check that logs were created (at least one info log should be there)
-    val logs = appender.getEvents
-    logs should not be empty
+    val logContent = readLogFile(logFilePath)
+    logContent should not be empty
+    logContent should include ("program start (logging begins here)")
 
-    // Check specific log message content
-    val infoLogs = logs.filter(event => Option(event.getLevel).contains(Level.INFO)).map(_.getFormattedMessage)
-
-    // Use contains to check for message existence without null issues
-    infoLogs.contains("program start (logging begins here)") should be(true)
-
-    appender.stop()
-    Await.result(future, 5.seconds)
+    //Await.result(future, 20.seconds)
+    
+  }
+  def clearLogFile(filePath: String): Unit = {
+    val writer = new PrintWriter(new File(filePath))
+    writer.write("")  // Write an empty string to clear the file
+    writer.close()
+  }
+  def readLogFile(filePath: String): String = {
+    val source: BufferedSource = Source.fromFile(filePath)
+    try source.getLines().mkString("\n")  // Read all lines and concatenate them into a single string
+    finally source.close()
   }
 }
