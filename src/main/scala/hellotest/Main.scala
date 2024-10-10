@@ -101,7 +101,7 @@ class StreamFrequencySorter(
     wordFrequency(word) = wordFrequency.getOrElse(word, 0) + 1
     logger.debug(s"Added word to queue: $word")
 
-    // Automatically remove oldest word when queue exceeds capacity
+    // automatically remove oldest word when queue exceeds capacity
     if (wordQueue.size == windowSize) {
       Option(wordQueue.peek()).foreach { oldestWord =>
         wordFrequency(oldestWord) = wordFrequency(oldestWord) - 1
