@@ -1,7 +1,4 @@
-package hellotest
-
-import org.apache.commons.collections4.queue.CircularFifoQueue
-import scala.collection.mutable
+import scala.collection.immutable.Queue
 import scala.language.unsafeNulls
 import scala.sys.exit
 import org.log4s.getLogger
@@ -9,62 +6,66 @@ import scala.io.Source
 
 object Main {
   private[this] val logger = getLogger
-  var PRINT_COUNTER: Int = 0
 
   def main(args: Array[String]): Unit = {
-    logger.info("program start (logging begins here)")
-    // Default values for the arguments
-    var cloudSize = 10
-    var kSteps = 6
-    var minFrequency = 1
-    var minLength = 1
-    var windowSize = 1000
+    logger.info("Program start (logging begins here)")
 
-    // Parse command-line arguments (if provided)
-    args.sliding(2, 2).toList.collect {
-      case Array("--cloud-size", value: String) => cloudSize = value.toInt
-      case Array("-c", value: String) => cloudSize = value.toInt
-      case Array("--length-at-least", value: String) => minLength = value.toInt
-      case Array("-l", value: String) => minLength = value.toInt
-      case Array("--window-size", value: String) => windowSize = value.toInt
-      case Array("-w", value: String) => windowSize = value.toInt
+    // Default values for the arguments
+    val defaultCloudSize = 10
+    val defaultKSteps = 6
+    val defaultMinFrequency = 1
+    val defaultMinLength = 1
+    val defaultWindowSize = 1000
+
+    // Parse command-line arguments and use them to initialize configuration
+    val (cloudSize, minLength, windowSize) = args.sliding(2, 2).toList.foldLeft((defaultCloudSize, defaultMinLength, defaultWindowSize)) {
+      case ((cloudSize, minLength, windowSize), Array("--cloud-size", value: String)) => (value.toInt, minLength, windowSize)
+      case ((cloudSize, minLength, windowSize), Array("-c", value: String)) => (value.toInt, minLength, windowSize)
+      case ((cloudSize, minLength, windowSize), Array("--length-at-least", value: String)) => (cloudSize, value.toInt, windowSize)
+      case ((cloudSize, minLength, windowSize), Array("-l", value: String)) => (cloudSize, value.toInt, windowSize)
+      case ((cloudSize, minLength, windowSize), Array("--window-size", value: String)) => (cloudSize, minLength, value.toInt)
+      case ((cloudSize, minLength, windowSize), Array("-w", value: String)) => (cloudSize, minLength, value.toInt)
+      case (config, _) => config
     }
-    
-    // Log the received arguments
-    logger.debug(s"cloudSize: $cloudSize, kSteps: $kSteps, minFrequency: $minFrequency, minLength: $minLength, windowSize: $windowSize")
+
+    logger.debug(s"cloudSize: $cloudSize, minLength: $minLength, windowSize: $windowSize")
 
     // Initialize the word processor with a frequency sorter
-    val wordProcessor = new StreamFrequencySorter(cloudSize, minLength, windowSize, minFrequency)
+    val wordProcessor = new StreamFrequencySorter(cloudSize, minLength, windowSize, defaultMinFrequency)
     logger.info("Initialized StreamFrequencySorter")
 
-    // Read words from standard input (can be from a continuous stream)
+    // Read words from standard input
     val lines = Source.stdin.getLines
     val words = lines.flatMap(line => Option(line).map(_.split("(?U)[^\\p{Alpha}0-9']+")).getOrElse(Array.empty[String]))
     logger.info("Started reading words from standard input")
 
-    // Process each word
-    words.filter(_ != null).foreach { word =>
-      if (word.length >= minLength) {
-        // Convert word to lowercase for case-insensitive comparison
-        val lowercasedWord = word.toLowerCase
-        wordProcessor.processWord(lowercasedWord)
-        logger.debug(s"Processed word: $lowercasedWord")
+    // Process each word interactively using scanLeft
+    words
+      .filter(_ != null)
+      .scanLeft((Queue.empty[String], Map.empty[String, Int], 0)) {
+        case ((queue, freqMap, printCounter), word) =>
+          if (word.length >= minLength) {
+            val lowercasedWord = word.toLowerCase
+            val (newQueue, newFreqMap) = wordProcessor.processWord(lowercasedWord, queue, freqMap)
+            val newPrintCounter = printCounter + 1
 
-        //println(s"min length req met, adding word: $word")
-        // Increment print counter and check if we should print the top words
-        PRINT_COUNTER += 1
-        if (PRINT_COUNTER % kSteps == 0) {
-          printWordCloud(wordProcessor, cloudSize, System.out)
-        }
+            if (newPrintCounter % defaultKSteps == 0) {
+              printWordCloud(wordProcessor, cloudSize, newFreqMap, System.out)
+            }
+            (newQueue, newFreqMap, newPrintCounter)
+          } else {
+            (queue, freqMap, printCounter)
+          }
       }
-    }
+      .foreach(_ => ()) // To trigger the iterator processing
+
     // Print final word cloud after all input has been processed (EOF)
-    printWordCloud(wordProcessor, cloudSize, System.out)
+    printWordCloud(wordProcessor, cloudSize, Map.empty[String, Int], System.out)
   }
 
   // Helper method to print the top words in the word cloud
-  def printWordCloud(wordProcessor: StreamFrequencySorter, cloudSize: Int, output: java.io.PrintStream): Unit = {
-    val topWords = wordProcessor.getTopWords(cloudSize)
+  def printWordCloud(wordProcessor: StreamFrequencySorter, cloudSize: Int, wordFrequency: Map[String, Int], output: java.io.PrintStream): Unit = {
+    val topWords = wordProcessor.getTopWords(cloudSize, wordFrequency)
 
     // Print the top words in the desired format: "word: frequency"
     if (topWords.nonEmpty) {
@@ -79,49 +80,71 @@ object Main {
   }
 }
 
-// The StreamFrequencySorter class is complete
+// StreamFrequencySorter using immutable Map and Queue
 class StreamFrequencySorter(
-                             var cloudSize: Int,
-                             var minLength: Int,
-                             var windowSize: Int,
-                             var minFrequency: Int,
+                             val cloudSize: Int,
+                             val minLength: Int,
+                             val windowSize: Int,
+                             val minFrequency: Int,
                              val output: java.io.PrintStream = System.out
-                           ) {
+                           ) extends WordProcessor with FrequencySorter {
+
   private val logger = org.log4s.getLogger
-  var wordFrequency: mutable.Map[String, Int] = mutable.Map()
-  private val wordQueue = new CircularFifoQueue[String](windowSize)
 
-  def processWord(word: String): Unit = {
-    // ignore word if it doesn't meet the expected minlength
+  // Function to process each word with immutable Queue and Map
+  def processWord(word: String, wordQueue: Queue[String], wordFrequency: Map[String, Int]): (Queue[String], Map[String, Int]) = {
     if (word.length < minLength) {
-    logger.debug(s"Ignoring word due to min length (length ${word.length}): $word")
-    return 
-    }
-    wordQueue.add(word)
-    wordFrequency(word) = wordFrequency.getOrElse(word, 0) + 1
-    logger.debug(s"Added word to queue: $word")
+      logger.debug(s"Ignoring word due to min length (length ${word.length}): $word")
+      (wordQueue, wordFrequency)
+    } else {
+      val updatedQueue = wordQueue.enqueue(word)
+      val updatedFrequency = wordFrequency.updated(word, wordFrequency.getOrElse(word, 0) + 1)
+      logger.debug(s"Added word to queue: $word")
 
-    // automatically remove oldest word when queue exceeds capacity
-    if (wordQueue.size == windowSize) {
-      Option(wordQueue.peek()).foreach { oldestWord =>
-        wordFrequency(oldestWord) = wordFrequency(oldestWord) - 1
+      // Automatically remove oldest word when queue exceeds capacity
+      if (updatedQueue.size > windowSize) {
+        val (oldestWord, remainingQueue) = updatedQueue.dequeue
+        val decrementedFrequency = updatedFrequency.updated(oldestWord, updatedFrequency(oldestWord) - 1)
         logger.debug(s"Removed oldest word from queue: $oldestWord")
-        if (wordFrequency(oldestWord) == 0) {
-          wordFrequency.remove(oldestWord)
-          logger.debug(s"Removed word from frequency map: $oldestWord")
+
+        // Remove the word from the map if its frequency is 0
+        val finalFrequency = if (decrementedFrequency(oldestWord) == 0) {
+          decrementedFrequency - oldestWord
+        } else {
+          decrementedFrequency
         }
+        logger.debug(s"Updated word frequency map")
+
+        (remainingQueue, finalFrequency)
+      } else {
+        (updatedQueue, updatedFrequency)
       }
     }
   }
 
-  def getTopWords(topN: Int): Seq[(String, Int)] = {
-    val topWords = wordFrequency
+  // Get the top N words by frequency
+  def getTopWords(topN: Int, wordFrequency: Map[String, Int]): Seq[(String, Int)] = {
+    wordFrequency
       .filter(_._2 >= minFrequency) // Filter by minimum frequency
       .toSeq
       .sortBy { case (_, count) => -count } // Sort by frequency in descending order
       .take(topN) // Take the top N most frequent words
-
-    logger.debug(s"Top words: ${topWords.mkString(", ")}")
-    topWords
   }
 }
+
+// Trait for processing words
+trait WordProcessor {
+  def processWord(word: String, wordQueue: Queue[String], wordFrequency: Map[String, Int]): (Queue[String], Map[String, Int])
+}
+
+// Trait for sorting word frequencies
+trait FrequencySorter {
+  val windowSize: Int
+  val minFrequency: Int
+  val minLength: Int
+
+  def getTopWords(topN: Int, wordFrequency: Map[String, Int]): Seq[(String, Int)]
+}
+
+
+

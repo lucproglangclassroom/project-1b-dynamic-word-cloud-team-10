@@ -43,3 +43,113 @@
 2024-10-01 23:21:49 DEBUG hellotest.Main - cloudSize: 5, kSteps: 6, minFrequency: 1, minLength: 3, windowSize: 1000
 2024-10-01 23:21:49 INFO  hellotest.Main - Initialized StreamFrequencySorter
 2024-10-01 23:21:49 INFO  hellotest.Main - Started reading words from standard input
+2024-10-11 20:32:15 INFO  <empty>.Main - program start (logging begins here)
+2024-10-11 20:32:15 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-11 20:32:15 INFO  <empty>.Main - Initialized StreamFrequencySorter
+2024-10-11 20:32:15 INFO  <empty>.Main - Started reading words from standard input
+2024-10-11 20:32:20 DEBUG <empty>.StreamFrequencySorter - Added word to queue: a
+2024-10-11 20:32:20 DEBUG <empty>.Main - Processed word: a
+2024-10-11 20:32:20 DEBUG <empty>.StreamFrequencySorter - Added word to queue: b
+2024-10-11 20:32:20 DEBUG <empty>.Main - Processed word: b
+2024-10-11 20:32:20 DEBUG <empty>.StreamFrequencySorter - Added word to queue: c
+2024-10-11 20:32:20 DEBUG <empty>.Main - Processed word: c
+2024-10-11 20:32:22 DEBUG <empty>.StreamFrequencySorter - Added word to queue: aa
+2024-10-11 20:32:22 DEBUG <empty>.Main - Processed word: aa
+2024-10-11 20:32:22 DEBUG <empty>.StreamFrequencySorter - Added word to queue: bb
+2024-10-11 20:32:22 DEBUG <empty>.Main - Processed word: bb
+2024-10-11 20:32:22 DEBUG <empty>.StreamFrequencySorter - Added word to queue: cc
+2024-10-11 20:32:22 DEBUG <empty>.Main - Processed word: cc
+2024-10-11 20:32:22 DEBUG <empty>.StreamFrequencySorter - Top words: (a,1), (b,1), (cc,1), (c,1), (aa,1), (bb,1)
+2024-10-11 20:32:22 INFO  <empty>.Main - Printed word cloud
+2024-10-12 10:39:44 INFO  <empty>.Main - program start (logging begins here)
+2024-10-12 10:39:45 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-12 10:39:54 INFO  <empty>.Main - program start (logging begins here)
+2024-10-12 10:39:54 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-12 10:46:48 INFO  <empty>.Main - program start (logging begins here)
+2024-10-12 10:46:48 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-12 10:46:48 INFO  <empty>.Main - Initialized StreamFrequencySorter
+2024-10-12 10:46:48 INFO  <empty>.Main - Started reading words from standard input
+2024-10-12 10:46:48 DEBUG <empty>.StreamFrequencySorter - Added word to queue: aa
+2024-10-12 10:46:48 DEBUG <empty>.Main - Processed word: aa
+2024-10-12 10:46:48 DEBUG <empty>.StreamFrequencySorter - Added word to queue: bb
+2024-10-12 10:46:48 DEBUG <empty>.Main - Processed word: bb
+2024-10-12 10:46:48 DEBUG <empty>.StreamFrequencySorter - Added word to queue: cc
+2024-10-12 10:46:48 DEBUG <empty>.Main - Processed word: cc
+2024-10-12 10:46:53 DEBUG <empty>.StreamFrequencySorter - Added word to queue: a
+2024-10-12 10:46:53 DEBUG <empty>.Main - Processed word: a
+2024-10-12 10:46:53 DEBUG <empty>.StreamFrequencySorter - Added word to queue: b
+2024-10-12 10:46:53 DEBUG <empty>.Main - Processed word: b
+2024-10-12 10:46:53 DEBUG <empty>.StreamFrequencySorter - Added word to queue: c
+2024-10-12 10:46:53 DEBUG <empty>.Main - Processed word: c
+2024-10-12 10:46:53 DEBUG <empty>.StreamFrequencySorter - Top words: (a,1), (b,1), (cc,1), (c,1), (aa,1), (bb,1)
+2024-10-12 10:46:53 INFO  <empty>.Main - Printed word cloud
+2024-10-12 10:52:28 INFO  <empty>.Main - program start (logging begins here)
+2024-10-12 10:52:28 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-12 10:52:28 INFO  <empty>.Main - Initialized StreamFrequencySorter
+2024-10-12 10:52:28 INFO  <empty>.Main - Started reading words from standard input
+2024-10-12 10:52:31 DEBUG <empty>.StreamFrequencySorter - Added word to queue: a
+2024-10-12 10:52:31 DEBUG <empty>.Main - Processed word: a
+2024-10-12 10:52:31 DEBUG <empty>.StreamFrequencySorter - Added word to queue: b
+2024-10-12 10:52:31 DEBUG <empty>.Main - Processed word: b
+2024-10-12 10:52:31 DEBUG <empty>.StreamFrequencySorter - Added word to queue: c
+2024-10-12 10:52:31 DEBUG <empty>.Main - Processed word: c
+2024-10-12 10:52:32 DEBUG <empty>.StreamFrequencySorter - Added word to queue: aa
+2024-10-12 10:52:32 DEBUG <empty>.Main - Processed word: aa
+2024-10-12 10:52:32 DEBUG <empty>.StreamFrequencySorter - Added word to queue: bb
+2024-10-12 10:52:32 DEBUG <empty>.Main - Processed word: bb
+2024-10-12 10:52:32 DEBUG <empty>.StreamFrequencySorter - Added word to queue: cc
+2024-10-12 10:52:32 DEBUG <empty>.Main - Processed word: cc
+2024-10-12 10:52:33 DEBUG <empty>.StreamFrequencySorter - Top words: (a,1), (b,1), (cc,1), (c,1), (aa,1), (bb,1)
+2024-10-12 10:52:33 INFO  <empty>.Main - Printed word cloud
+2024-10-12 10:56:07 INFO  <empty>.Main - Program start (logging begins here)
+2024-10-12 10:56:07 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-12 10:56:07 INFO  <empty>.Main - Initialized StreamFrequencySorter
+2024-10-12 10:56:07 INFO  <empty>.Main - Started reading words from standard input
+2024-10-12 10:56:11 DEBUG <empty>.StreamFrequencySorter - Added word to queue: a
+2024-10-12 10:56:11 DEBUG <empty>.Main - Processed word: a
+2024-10-12 10:56:11 DEBUG <empty>.StreamFrequencySorter - Added word to queue: b
+2024-10-12 10:56:11 DEBUG <empty>.Main - Processed word: b
+2024-10-12 10:56:11 DEBUG <empty>.StreamFrequencySorter - Added word to queue: c
+2024-10-12 10:56:11 DEBUG <empty>.Main - Processed word: c
+2024-10-12 10:56:13 DEBUG <empty>.StreamFrequencySorter - Added word to queue: aa
+2024-10-12 10:56:13 DEBUG <empty>.Main - Processed word: aa
+2024-10-12 10:56:13 DEBUG <empty>.StreamFrequencySorter - Added word to queue: bb
+2024-10-12 10:56:13 DEBUG <empty>.Main - Processed word: bb
+2024-10-12 10:56:13 DEBUG <empty>.StreamFrequencySorter - Added word to queue: cc
+2024-10-12 10:56:13 DEBUG <empty>.Main - Processed word: cc
+2024-10-12 10:56:13 INFO  <empty>.Main - Printed word cloud
+2024-10-12 10:57:35 INFO  <empty>.Main - Program start (logging begins here)
+2024-10-12 10:57:35 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-12 10:57:35 INFO  <empty>.Main - Initialized StreamFrequencySorter
+2024-10-12 10:57:35 INFO  <empty>.Main - Started reading words from standard input
+2024-10-12 10:58:09 DEBUG <empty>.StreamFrequencySorter - Added word to queue: a
+2024-10-12 10:58:09 DEBUG <empty>.Main - Processed word: a
+2024-10-12 10:58:09 DEBUG <empty>.StreamFrequencySorter - Added word to queue: b
+2024-10-12 10:58:09 DEBUG <empty>.Main - Processed word: b
+2024-10-12 10:58:09 DEBUG <empty>.StreamFrequencySorter - Added word to queue: c
+2024-10-12 10:58:09 DEBUG <empty>.Main - Processed word: c
+2024-10-12 10:58:11 DEBUG <empty>.StreamFrequencySorter - Added word to queue: aa
+2024-10-12 10:58:11 DEBUG <empty>.Main - Processed word: aa
+2024-10-12 10:58:11 DEBUG <empty>.StreamFrequencySorter - Added word to queue: bb
+2024-10-12 10:58:11 DEBUG <empty>.Main - Processed word: bb
+2024-10-12 10:58:11 DEBUG <empty>.StreamFrequencySorter - Added word to queue: cc
+2024-10-12 10:58:11 DEBUG <empty>.Main - Processed word: cc
+2024-10-12 10:58:11 INFO  <empty>.Main - Printed word cloud
+2024-10-12 11:00:49 INFO  <empty>.Main - Program start (logging begins here)
+2024-10-12 11:00:49 DEBUG <empty>.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-12 11:00:49 INFO  <empty>.Main - Initialized StreamFrequencySorter
+2024-10-12 11:00:49 INFO  <empty>.Main - Started reading words from standard input
+2024-10-12 11:00:53 DEBUG <empty>.StreamFrequencySorter - Added word to queue: a
+2024-10-12 11:00:53 DEBUG <empty>.StreamFrequencySorter - Added word to queue: b
+2024-10-12 11:00:53 DEBUG <empty>.StreamFrequencySorter - Added word to queue: c
+2024-10-12 11:00:54 DEBUG <empty>.StreamFrequencySorter - Added word to queue: aa
+2024-10-12 11:00:54 DEBUG <empty>.StreamFrequencySorter - Added word to queue: bb
+2024-10-12 11:00:54 DEBUG <empty>.StreamFrequencySorter - Added word to queue: cc
+2024-10-12 11:00:55 INFO  <empty>.Main - Printed word cloud
+2024-10-12 11:01:15 DEBUG <empty>.StreamFrequencySorter - Added word to queue: apple
+2024-10-12 11:01:15 DEBUG <empty>.StreamFrequencySorter - Added word to queue: banana
+2024-10-12 11:01:15 DEBUG <empty>.StreamFrequencySorter - Added word to queue: car
+2024-10-12 11:01:20 DEBUG <empty>.StreamFrequencySorter - Added word to queue: apple
+2024-10-12 11:01:20 DEBUG <empty>.StreamFrequencySorter - Added word to queue: car
+2024-10-12 11:01:20 DEBUG <empty>.StreamFrequencySorter - Added word to queue: lake
+2024-10-12 11:01:20 INFO  <empty>.Main - Printed word cloud
