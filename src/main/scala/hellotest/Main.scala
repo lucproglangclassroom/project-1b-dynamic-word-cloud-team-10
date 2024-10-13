@@ -32,7 +32,10 @@ object Main {
     }
 
     logger.debug(s"cloudSize: $cloudSize, minLength: $minLength, windowSize: $windowSize")
-
+    
+    // to read the ignorelist file
+    val ignoreList = readIgnoreList("ignoreList.txt")
+    
     // Initialize the word processor with a frequency sorter
     val wordProcessor = new StreamFrequencySorter(cloudSize, minLength, windowSize, defaultMinFrequency)
     logger.info("Initialized StreamFrequencySorter")
