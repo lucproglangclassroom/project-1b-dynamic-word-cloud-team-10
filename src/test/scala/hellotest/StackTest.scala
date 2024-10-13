@@ -55,9 +55,6 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
         (updatedQueue, updatedFrequency) // Return updated state
     }
   }
-
-
-
   //testing out getTopWords function
   it should "return the top words correctly" in {
     val outputStream = new ByteArrayOutputStream()
