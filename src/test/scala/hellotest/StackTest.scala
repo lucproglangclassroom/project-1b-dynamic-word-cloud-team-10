@@ -133,19 +133,6 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
     steps.last._2 shouldEqual expectedFinalFrequency
 }
 
-
-
-
-
-
-  
-
-
-
-
-
-
-
 // TODO: check for error handling
 //     - test if sigpipe handling works as intended 
   /*it should "handle SIGPIPE correctly in printWordCloud" in {
@@ -172,13 +159,13 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
  // has the error "Values of types ch.qos.logback.classic.Level and ch.qos.logback.classic.Level | Null cannot be compared with == or !="
  // so im commenting it out for now
 class LogCaptureAppender extends AppenderBase[ILoggingEvent] {
-  private val events = scala.collection.mutable.ArrayBuffer.empty[ILoggingEvent]
+  private var events = List.empty[ILoggingEvent]
 
   override def append(eventObject: ILoggingEvent): Unit = {
-    events.append(eventObject)
+    events = events :+ eventObject
   }
 
-  def getEvents: Seq[ILoggingEvent] = events.toSeq
+  def getEvents: Seq[ILoggingEvent] = events
 }
 
 class LoggingTest extends AnyFlatSpec with Matchers {
