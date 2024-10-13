@@ -18,6 +18,7 @@ import scala.io.{BufferedSource, Source}
 import scala.concurrent._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.collection.immutable.Queue
 
 // TODO: check that functionality works as intended: 
 //     - test for the processWord and getTopWords functions individually 
@@ -28,73 +29,123 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
     val outputStream = new ByteArrayOutputStream()
     val printStream = new PrintStream(outputStream)
     val sorter = new StreamFrequencySorter(3, 4, 5, 1)
-
     val testCases = Table(
-      ("input", "expectedFrequency"),
-      ("helloooo", 1),
-      ("hiiiiii", 1),
-      ("helloooo", 2),
-      ("hiiiiii", 2),
-      ("heyyyyyyy", 1)
+        ("input", "expectedFrequency"),
+        ("helloooo", 1),
+        ("hiiiiii", 1),
+        ("helloooo", 2),
+        ("hiiiiii", 2),
+        ("heyyyyyyy", 1)
     )
 
-    forAll(testCases) { (input: String, expectedFrequency: Int) =>
-      sorter.processWord(input)
-      val frequency = sorter.getTopWords(3).find(_._1 == input).map(_._2).getOrElse(0)
-      frequency shouldEqual expectedFrequency
+    val initialState = (Queue.empty[String], Map.empty[String, Int])
+
+    testCases.foldLeft(initialState) { case ((wordQueue, wordFrequency), (input, expectedFrequency)) =>
+        val (updatedQueue, updatedFrequency) = sorter.processWord(input, wordQueue, wordFrequency)
+        
+        // Print intermediate states for debugging
+        //println(s"Processing word: $input")
+        //println(s"Queue: $updatedQueue")
+        //println(s"Frequency map: $updatedFrequency")
+        
+        val frequency = sorter.getTopWords(3, updatedFrequency).find(_._1 == input).map(_._2).getOrElse(0)
+        //println(s"Expected frequency: $expectedFrequency, Actual frequency: $frequency")
+        frequency shouldEqual expectedFrequency
+        
+        (updatedQueue, updatedFrequency) // Return updated state
     }
   }
+
+
+
   //testing out getTopWords function
   it should "return the top words correctly" in {
-    // initializing a new set of sorters to process words into for topword testing
     val outputStream = new ByteArrayOutputStream()
     val printStream = new PrintStream(outputStream)
     val sorter = new StreamFrequencySorter(3, 4, 10, 1)
-
-    sorter.processWord("apple")
-    sorter.processWord("banana")
-    sorter.processWord("apple")
-    sorter.processWord("orange")
-    sorter.processWord("banana")
-    sorter.processWord("banana")
-
+    
+    // Immutable initial state
+    val initialState = (Queue.empty[String], Map.empty[String, Int])
+    
+    // Process words immutably
+    val finalState = Seq("apple", "banana", "apple", "orange", "banana", "banana").foldLeft(initialState) { 
+        case ((wordQueue, wordFrequency), word) => 
+            sorter.processWord(word, wordQueue, wordFrequency)
+    }
+    
     val expectedTopWords = Seq(("banana", 3), ("apple", 2), ("orange", 1))
-    val topWords = sorter.getTopWords(3)
-
+    val topWords = sorter.getTopWords(3, finalState._2)
     topWords shouldEqual expectedTopWords
-  }
+}
+
 // TODO: check for errors with the parameters in StreamFrequencySorter: 
 //     - test for min / max parameters in minLength, minFrequency, and windowSize
 //     - test for the wordlength minimum critera has been implemented 
 //     - OPTIONAL: test to see how program responds with non-numerical inputs
   it should "handle different parameters correctly" in {
     val testCases = Table(
-      // first element displays the order of test table
-      // tl;dr: parameters | words: fed input | expectedTopWords: expected output
-      ("cloudSize", "minLength", "windowSize", "minFrequency", "words", "expectedTopWords"),
-      (3, 4, 5, 1, Seq("hello", "world", "hello", "scala"), Seq(("hello", 2), ("world", 1), ("scala", 1))),
-      // test minLength
-      (3, 6, 5, 1, Seq("hello", "wor", "banana"), Seq(("banana", 1))),
-      // test window size
-      (3, 4, 3, 1, Seq("scala", "java", "python", "kotlin"), Seq(("python", 1), ("kotlin", 1))),
-      // test minimum frequency
-      (3, 4, 5, 2, Seq("apple", "banana", "apple", "apple"), Seq(("apple", 3)))
+        ("cloudSize", "minLength", "windowSize", "minFrequency", "words", "expectedTopWords"),
+        (3, 4, 5, 1, Seq("hello", "world", "hello", "scala"), Seq(("hello", 2), ("world", 1), ("scala", 1))),
+        (3, 6, 5, 1, Seq("hello", "wor", "banana"), Seq(("banana", 1))),
+        (3, 4, 3, 1, Seq("scala", "java", "python", "kotlin"), Seq(("python", 1), ("kotlin", 1))),
+        (3, 4, 5, 2, Seq("apple", "banana", "apple", "apple"), Seq(("apple", 3)))
     )
 
     forAll(testCases) { (cloudSize, minLength, windowSize, minFrequency, words, expectedTopWords) =>
-      val outputStream = new ByteArrayOutputStream()
-      val printStream = new PrintStream(outputStream)
-      val sorter = new StreamFrequencySorter(cloudSize, minLength, windowSize, minFrequency)
+        val sorter = new StreamFrequencySorter(cloudSize, minLength, windowSize, minFrequency)
+        
+        val initialState = (Queue.empty[String], Map.empty[String, Int])
 
-      words.foreach { word =>
-      sorter.processWord(word)
-      } 
+        val finalState = words.foldLeft(initialState) {
+            case ((wordQueue, wordFrequency), word) =>
+                sorter.processWord(word, wordQueue, wordFrequency)
+        }
 
-      val topWords = sorter.getTopWords(cloudSize)
-
-      topWords shouldEqual expectedTopWords
+        val topWords = sorter.getTopWords(cloudSize, finalState._2)
+        topWords shouldEqual expectedTopWords
     }
   }
+  it should "test window size enforcement precisely" in {
+    val sorter = new StreamFrequencySorter(3, 4, 3, 1)
+
+    // Define initial state and input sequence
+    val initialState = (Queue.empty[String], Map.empty[String, Int])
+    val words = Seq("scala", "java", "python", "kotlin")
+
+    // Step through word processing
+    val steps = words.foldLeft(Seq.empty[(Queue[String], Map[String, Int])]) { (acc, word) =>
+        val currentState = if (acc.isEmpty) initialState else acc.last
+        val newState = sorter.processWord(word, currentState._1, currentState._2)
+        acc :+ newState
+    }
+
+    // Inspect each step
+    steps.foreach { case (queue, freqMap) =>
+        println(s"Queue: $queue")
+        println(s"Frequency map: $freqMap")
+    }
+
+    // Expected final state
+    val expectedFinalQueue = Queue("python", "kotlin")
+    val expectedFinalFrequency = Map("python" -> 1, "kotlin" -> 1)
+
+    steps.last._1 shouldEqual expectedFinalQueue
+    steps.last._2 shouldEqual expectedFinalFrequency
+}
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
 // TODO: check for error handling
 //     - test if sigpipe handling works as intended 
   /*it should "handle SIGPIPE correctly in printWordCloud" in {
