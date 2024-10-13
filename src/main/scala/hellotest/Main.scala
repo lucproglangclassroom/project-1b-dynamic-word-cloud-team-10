@@ -105,7 +105,7 @@ class StreamFrequencySorter(
       logger.debug(s"Added word to queue: $word")
 
       // Automatically remove oldest word when queue exceeds capacity
-      if (updatedQueue.size > windowSize) {
+      if (updatedQueue.size >= windowSize) {
         val (oldestWord, remainingQueue) = updatedQueue.dequeue
         val decrementedFrequency = updatedFrequency.updated(oldestWord, updatedFrequency(oldestWord) - 1)
         logger.debug(s"Removed oldest word from queue: $oldestWord")

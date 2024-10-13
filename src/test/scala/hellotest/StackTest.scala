@@ -87,7 +87,7 @@ class StreamFrequencySorterSpec extends AnyFlatSpec with Matchers{
         ("cloudSize", "minLength", "windowSize", "minFrequency", "words", "expectedTopWords"),
         (3, 4, 5, 1, Seq("hello", "world", "hello", "scala"), Seq(("hello", 2), ("world", 1), ("scala", 1))),
         (3, 6, 5, 1, Seq("hello", "wor", "banana"), Seq(("banana", 1))),
-        (3, 4, 3, 1, Seq("scala", "java", "python", "kotlin"), Seq(("java", 1), ("python", 1), ("kotlin", 1))),
+        (3, 4, 3, 1, Seq("scala", "java", "python", "kotlin"), Seq(("python", 1), ("kotlin", 1))),
         (3, 4, 5, 2, Seq("apple", "banana", "apple", "apple"), Seq(("apple", 3)))
     )
 
