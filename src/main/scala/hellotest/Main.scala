@@ -1,3 +1,6 @@
+package hellotest
+
+import org.apache.commons.collections4.queue.CircularFifoQueue
 import scala.collection.immutable.Queue
 import scala.language.unsafeNulls
 import scala.sys.exit
