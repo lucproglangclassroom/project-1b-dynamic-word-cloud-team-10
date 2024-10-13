@@ -198,7 +198,7 @@ class LoggingTest extends AnyFlatSpec with Matchers {
     // Check that logs were created (at least one info log should be there)
     val logContent = readLogFile(logFilePath)
     logContent should not be empty
-    logContent should include ("program start (logging begins here)")
+    logContent should include ("Program start (logging begins here)")
 
     //Await.result(future, 20.seconds)
     
