@@ -6,6 +6,7 @@ import scala.language.unsafeNulls
 import scala.sys.exit
 import org.log4s.getLogger
 import scala.io.Source
+import scala.Console._
 
 object Main {
   private[this] val logger = getLogger
@@ -73,18 +74,38 @@ object Main {
   def printWordCloud(wordProcessor: StreamFrequencySorter, cloudSize: Int, wordFrequency: Map[String, Int], output: java.io.PrintStream): Unit = {
     val topWords = wordProcessor.getTopWords(cloudSize, wordFrequency)
 
-    // Print the top words in the desired format: "word: frequency"
-    if (topWords.nonEmpty) {
-      output.println(topWords.map { case (word, count) => s"$word: $count" }.mkString(" "))
-      logger.info("Printed word cloud")
-      if (output.checkError()) {
-        logger.error("Error detected while printing. Exiting (SIGPIPE)")
-        exit(1)
-      }
+    //print("\u001b[H\u001b[2J")
+    println("=" * 30)
+    println("_____________________________")
+
+    val maxWordLength = topWords.map(_._1.length).maxOption.getOrElse(0)
+    val maxCountLength = topWords.map(_._2.toString.length).maxOption.getOrElse(0)
+    val boxWidth = maxWordLength + maxCountLength + 10
+
+    for ((word, count) <- topWords) {
+      val wordFormatted = "|  " + word.padTo(maxWordLength + 1, ' ') + "|  " + count.toString.reverse.padTo(maxCountLength, ' ').reverse + " |"
+      val boxTopBottom = " " + "─" * (boxWidth - 2) + " "
+
+      println(center(boxTopBottom, boxWidth + 2))
+      println(center(wordFormatted, boxWidth + 2))
+      println(center(" " + "─" * (boxWidth - 2) + " ", boxWidth + 2))
     }
-    Console.flush() // Ensure the output is flushed to the console
+
+    println(center(" " + "─" * (boxWidth - 2) + " ", boxWidth + 2))
+
+    logger.info("Printed word cloud")
+    if (output.checkError()) {
+      logger.error("Error detected while printing. Exiting (SIGPIPE)")
+      exit(1)
+    }
   }
+  Console.flush() // Ensure the output is flushed to the console
 }
+def center(text: String, width: Int): String = {
+    val totalSpaces = width - text.length
+    val leftPadding = totalSpaces / 2
+    " " * leftPadding + text
+  }
 
 // StreamFrequencySorter using immutable Map and Queue
 class StreamFrequencySorter(

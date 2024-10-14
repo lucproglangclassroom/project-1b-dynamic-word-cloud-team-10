@@ -1,0 +1,85 @@
+2024-10-13 19:53:28 INFO  hellotest.Main - Program start (logging begins here)
+2024-10-13 19:53:28 DEBUG hellotest.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-13 19:53:28 INFO  hellotest.Main - Initialized StreamFrequencySorter
+2024-10-13 19:53:28 INFO  hellotest.Main - Started reading words from standard input
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: this
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: is
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: a
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: to
+2024-10-13 19:53:48 INFO  hellotest.Main - Printed word cloud
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: out
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: dynamic
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: word
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: graphs
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: for
+2024-10-13 19:53:48 INFO  hellotest.Main - Printed word cloud
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: this
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 19:53:48 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-10-13 21:39:03 INFO  hellotest.Main - Program start (logging begins here)
+2024-10-13 21:39:03 DEBUG hellotest.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-13 21:39:03 INFO  hellotest.Main - Initialized StreamFrequencySorter
+2024-10-13 21:39:03 INFO  hellotest.Main - Started reading words from standard input
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: this
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: is
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: a
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: to
+2024-10-13 21:39:25 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: see
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: if
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: dynamic
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: cloud
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: graphs
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: will
+2024-10-13 21:39:25 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: work
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: or
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: whatever
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: let's
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: take
+2024-10-13 21:39:25 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: a
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: look
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hello
+2024-10-13 21:39:25 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 21:40:29 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:40:39 INFO  hellotest.Main - Program start (logging begins here)
+2024-10-13 21:40:39 DEBUG hellotest.Main - cloudSize: 10, minLength: 1, windowSize: 1000
+2024-10-13 21:40:39 INFO  hellotest.Main - Initialized StreamFrequencySorter
+2024-10-13 21:40:39 INFO  hellotest.Main - Started reading words from standard input
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hi
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: this
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: is
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: a
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: to
+2024-10-13 21:41:01 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: see
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: if
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: this
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: will
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: work
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: or
+2024-10-13 21:41:01 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: whatever
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: for
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: formatting
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hi
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: this
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: is
+2024-10-13 21:41:01 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: a
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hi
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hi
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: hi
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 21:41:01 INFO  hellotest.Main - Printed word cloud
+2024-10-13 21:41:01 DEBUG hellotest.StreamFrequencySorter - Added word to queue: test
+2024-10-13 21:41:19 INFO  hellotest.Main - Printed word cloud
