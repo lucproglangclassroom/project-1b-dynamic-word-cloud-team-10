@@ -6,7 +6,6 @@ import org.scalatest.prop.TableDrivenPropertyChecks._
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 import scala.util.control.NonFatal
-import org.mockito.Mockito._
 import ch.qos.logback.classic.{Level, Logger}
 import ch.qos.logback.classic.spi.ILoggingEvent
 import ch.qos.logback.core.AppenderBase
