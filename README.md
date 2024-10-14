@@ -1,6 +1,17 @@
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=16048125)
 # hello-scalatest-scala
 
 Small project to get started with Scala and ScalaTest.
+
+## Extra Credit
+
+Project1b:
+0.5 Treat words case-insensitively, i.e., ignore capitalization and the like.
+0.5 Add an command-line argument for updating the word cloud only every k steps.
+1 Add an command-line argument for a minimum frequency to include a word in the word cloud.
+
+Project1c:
+2 Dynamic graphical visualization of the word cloud.
 
 
 ## Running the main program
