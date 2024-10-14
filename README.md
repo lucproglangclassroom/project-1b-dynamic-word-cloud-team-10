@@ -5,9 +5,13 @@ Small project to get started with Scala and ScalaTest.
 
 ## Extra Credit
 
+Project1b:
 0.5 Treat words case-insensitively, i.e., ignore capitalization and the like.
 0.5 Add an command-line argument for updating the word cloud only every k steps.
 1 Add an command-line argument for a minimum frequency to include a word in the word cloud.
+
+Project1c:
+2 Dynamic graphical visualization of the word cloud.
 
 
 ## Running the main program
